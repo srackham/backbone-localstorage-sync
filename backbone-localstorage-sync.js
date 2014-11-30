@@ -16,16 +16,17 @@ var BackboneLocalStorage = function(name) {
 
 var syncCache = {};
 
-// Returns a Backbone sync function that is bound to the options.name
-// BackboneLocalStorage instance.
+// Returns a Backbone sync function which is bound to a
+// BackboneLocalStorage instance. The `key` argument is
+// a string which identifies the browser LocalStorage key/value pair.
 // This is the only object exported by the module.
-module.exports = BackboneLocalStorage.sync = function(name) {
+module.exports = BackboneLocalStorage.sync = function(key) {
   // Ensure there is only on sync adapter per localStorage item.
-  if (!syncCache[name]) {
-    var localStorage = new BackboneLocalStorage(name);
-    syncCache[name] = localStorage.sync.bind(localStorage);
+  if (!syncCache[key]) {
+    var localStorage = new BackboneLocalStorage(key);
+    syncCache[key] = localStorage.sync.bind(localStorage);
   }
-  return syncCache[name];
+  return syncCache[key];
 };
 
 BackboneLocalStorage.prototype = {

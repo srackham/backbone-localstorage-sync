@@ -1,7 +1,7 @@
 /*
 
 backbone-localstorage-sync
-https://github.com/srackham/backbone-localstorage-sync.git
+https://github.com/srackham/backbone-localstorage-sync
 
 */
 'use strict';

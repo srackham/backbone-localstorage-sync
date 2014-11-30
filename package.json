@@ -1,13 +1,14 @@
 {
   "name": "backbone-localstorage-sync",
   "author": "Stuart Rackham <srackham@gmail.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Backbone sync function adapter for persisting Models and Collections to browser localStorage",
   "keywords": [
     "backbone",
     "sync",
     "localstorage"
   ],
+  "main": "backbone-localstorage-sync.js",
   "licenses": [
     {
       "type": "MIT"
@@ -18,6 +19,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/srackham/backbone-localstorage-sync.git"
+    "url": "https://github.com/srackham/backbone-localstorage-sync"
   }
 }

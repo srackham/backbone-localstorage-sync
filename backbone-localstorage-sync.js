@@ -19,8 +19,8 @@ var syncCache = {};
 // Returns a Backbone sync function which is bound to a
 // BackboneLocalStorage instance. The `key` argument is
 // a string which identifies the browser LocalStorage key/value pair.
-// This is the only object exported by the module.
-module.exports = BackboneLocalStorage.sync = function(key) {
+// This factory function returns a per LocalStorage item singleton function.
+module.exports = function(key) {
   // Ensure there is only on sync adapter per localStorage item.
   if (!syncCache[key]) {
     var localStorage = new BackboneLocalStorage(key);
@@ -96,7 +96,7 @@ BackboneLocalStorage.prototype = {
         break;
     }
     if (resp) {
-      // 1. If necessary update the model/collection.
+      // 1. If necessary update the model (set)/collection (set or reset).
       // 2. Execute the fetch/save/destroy `options.success` callback.
       // 3. Emit a "sync" event with arguments model,resp,options.
       options.success(resp);

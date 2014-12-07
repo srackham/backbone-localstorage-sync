@@ -20,12 +20,12 @@ Install module with `npm install backbone-localstorage-sync`
 ## Using
 Globally, for example:
 
-    var BackboneLocalStorageSync = require('backbone-localstorage-sync.js');
+    var BackboneLocalStorageSync = require('backbone-localstorage-sync');
     Backbone.sync = BackboneLocalStorageSync('flux-backbone-todo');
 
 On a per Model/Collection class basis, for example:
 
-    var BackboneLocalStorageSync = require('backbone-localstorage-sync.js');
+    var BackboneLocalStorageSync = require('backbone-localstorage-sync');
 
     var TodoItem = Backbone.Model.extend({
       sync: BackboneLocalStorageSync('flux-backbone-todo'),

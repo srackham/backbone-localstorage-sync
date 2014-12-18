@@ -10,7 +10,7 @@ Modifications:
 
 - Converted to a Node compatible module for use by Browserify/Webpack.
 - No dependencies (Backbone or Underscore).
-- The adapter sync to be used on a per Model and per Collection basis.
+- You can specify separate stores for each Model and Collection.
 
 
 ## Installing
@@ -18,12 +18,12 @@ Install module with `npm install backbone-localstorage-sync`
 
 
 ## Using
-Globally, for example:
+Globally (one store for all models and collections), for example:
 
     var BackboneLocalStorageSync = require('backbone-localstorage-sync');
     Backbone.sync = BackboneLocalStorageSync('flux-backbone-todo');
 
-On a per Model/Collection class basis, for example:
+Storage a per Model/Collection class basis, for example:
 
     var BackboneLocalStorageSync = require('backbone-localstorage-sync');
 
